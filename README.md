@@ -1,3 +1,22 @@
+# Common Drain Stage with Active Load (IHP130):
+This project is for simualtion and derivation of the famous Common Drain stage with active load on IHP130 PDK
+
+It has a completed schematic file using Xschem and it includes: PTAT circuit, Startup circuit and the common Drain stage
+
+The Transfer Function derived showed more than 80% accuracy comopared to SPICE simualtion
+
+# Key Highlights & Specifications
+Process Node: IHP 130nm (SG13G2)
+
+Toolchain: Xschem (schematic capture), Ngspice (simulation), Python/Octave (for math verification)
+
+Topology: Common Drain with an active load
+
+Validation Metric: >80% analytical-to-simulation accuracy across the frequency band.
+
+
+
+
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg)
 
 # Tiny Tapeout Custom GDS / Analog Project Template
