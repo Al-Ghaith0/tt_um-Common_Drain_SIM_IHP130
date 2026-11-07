@@ -1,0 +1,63 @@
+** sch_path: /foss/designs/Common_Drain_SIM/tt_um-Common_Drain_SIM_IHP130/untitled.sch
+**.subckt untitled
+XM8 net8 net8 net1 net2 sg13_hv_pmos w=1.0u l=0.72u ng=1 m=1 rfmode=1
+XM5 net8 net11 net9 0 sg13_hv_nmos w=1.0u l=0.72u ng=1 m=1 rfmode=1
+XR1 net27 net4 sub! rhigh w=0.5e-6 l=04e-6 m=1 b=0
+XM4 net3 net3 net7 0 sg13_hv_nmos w=1.0u l=0.72u ng=1 m=1 rfmode=1
+XM1 net9 net3 net6 0 sg13_hv_nmos w=1.0u l=0.72u ng=1 m=1 rfmode=1
+XM7 net10 net1 net2 net2 sg13_hv_pmos w=1.0u l=0.72u ng=1 m=1 rfmode=1
+XM2 net1 net1 net2 net2 sg13_hv_pmos w=1.0u l=0.72u ng=1 m=1 rfmode=1
+XQ1 net4 net4 0 0 npn13G2 Nx=10
+XQ2 net5 net5 0 0 npn13G2 Nx=1
+XM9 net12 net1 net2 net2 sg13_hv_pmos w=1.0u l=0.72u ng=1 m=1 rfmode=1
+XM3 net11 net8 net10 net2 sg13_hv_pmos w=1.0u l=0.72u ng=1 m=1 rfmode=1
+XM6 net11 net11 net3 0 sg13_hv_nmos w=1.0u l=0.72u ng=1 m=1 rfmode=1
+XM10 net15 net8 net12 net2 sg13_hv_pmos w=1.0u l=0.72u ng=1 m=1 rfmode=1
+XR10 sub! 0 ptap1 R=262.8473 w=0.78e-6 l=0.78e-6
+XM22 net13 net13 0 0 sg13_hv_nmos w=1.0u l=0.72u ng=1 m=1 rfmode=1
+XM23 net14 net14 net13 0 sg13_hv_nmos w=1.0u l=0.72u ng=1 m=1 rfmode=1
+V1 net2 0 3
+V3 net14 net15 0
+XM11 net24 net19 net2 net2 sg13_hv_pmos w=1.0u l=0.72u ng=1 m=1 rfmode=1
+XM12 net16 net19 net2 net2 sg13_hv_pmos w=1.0u l=0.72u ng=1 m=1 rfmode=1
+XM13 net24 net8 net18 0 sg13_hv_nmos w=1.0u l=0.72u ng=1 m=1 rfmode=1
+XM14 net16 net22 net17 0 sg13_hv_nmos w=1.0u l=0.72u ng=1 m=1 rfmode=1
+XM15 net26 net20 0 0 sg13_hv_nmos w=1.0u l=0.72u ng=1 m=1 rfmode=1
+XM18 net20 net20 0 0 sg13_hv_nmos w=1.0u l=0.72u ng=1 m=1 rfmode=1
+XM19 net22 net22 net20 0 sg13_hv_nmos w=1.0u l=0.72u ng=1 m=2 rfmode=1
+XM20 net19 net19 net2 net2 sg13_hv_pmos w=1.0u l=0.72u ng=1 m=2 rfmode=1
+XR4 net2 net21 sub! rhigh w=0.5e-6 l=30e-6 m=1 b=0
+XR5 net21 net22 sub! rhigh w=0.5e-6 l=30e-6 m=1 b=0
+XR6 net19 net23 sub! rhigh w=0.5e-6 l=30e-6 m=1 b=0
+XR7 net23 0 sub! rhigh w=0.5e-6 l=30e-6 m=1 b=0
+XM21 net25 net16 0 0 sg13_hv_nmos w=1.0u l=0.72u ng=1 m=1 rfmode=1
+V2 net25 net1 0
+V4 net26 net17 0
+V5 net26 net18 0
+V8 net5 net6 0
+V9 net27 net7 0
+XM16 net29 net13 0 0 sg13_hv_nmos w=10.0u l=0.72u ng=1 m=1 rfmode=1
+XM17 net2 net30 net28 0 sg13_hv_nmos w=10.0u l=0.72u ng=1 m=1 rfmode=1
+V7 net29 net28 0
+V10 net30 net14 sin(0 1m 1meg 0 0 0) AC 1
+**** begin user architecture code
+
+.op
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+.lib cornerHBT.lib hbt_typ
+.lib cornerRES.lib res_typ
+.lib cornerDIO.lib dio_tt
+.param temp=27
+.save all
+.control
+show n.xm17.nsg13_hv_nmos
+show n.xm16.nsg13_hv_pmos
+run
+write op_sim.raw
+*.options savecurrents
+.endc
+
+**** end user architecture code
+**.ends
+.end
