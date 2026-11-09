@@ -52,7 +52,7 @@ V10 net30 net14 sin(0 1m 1meg 0 0 0) AC 1
 .save all
 .control
 run
-plot db(v(net28)/v(net30)) 180*cph(v(net28)/v(net28))/pi
+plot db(v(net28)/v(net30)) 180*cph(v(net28)/v(net30))/pi
 write ac_sim.raw
 *.options savecurrents
 .endc

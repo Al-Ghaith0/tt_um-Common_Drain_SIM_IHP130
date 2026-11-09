@@ -309,7 +309,7 @@ C {code_shown.sym} 235 -720 0 0 {name=s1 only_toplevel=false value=".ac dec 20 1
 .save all
 .control
 run
-plot db(v(net28)/v(net30)) 180*cph(v(net28)/v(net28))/pi
+plot db(v(net28)/v(net30)) 180*cph(v(net28)/v(net30))/pi
 write ac_sim.raw
 *.options savecurrents
 .endc"
